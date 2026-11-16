@@ -1,0 +1,533 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf7f3;
+    color: #4b403b;
+
+    background-image:
+        linear-gradient(
+            rgba(170, 145, 130, 0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(170, 145, 130, 0.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 24px 24px;
+}
+
+.karynnovena-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.karynnovena-sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #eee7df;
+    padding: 35px 25px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.karynnovena-sidebar h1 {
+    color: #c77f6c;
+    font-size: 27px;
+    margin-bottom: 55px;
+}
+
+.karynnovena-menu-label {
+    font-size: 11px;
+    color: #a99a90;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6b5e56;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #e2d4c9;
+    color: #bf7966;
+}
+
+.karynnovena-sidebar nav a svg {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+    margin-right: 0;
+}
+
+.karynnovena-sidebar-footer {
+    margin-top: auto;
+    font-size: 12px;
+    color: #9b887e;
+    line-height: 2;
+}
+
+.karynnovena-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px 6%;
+}
+
+.karynnovena-topbar {
+    display: flex;
+    justify-content: space-between;
+    color: #a39188;
+    font-size: 13px;
+    margin-bottom: 55px;
+}
+
+.karynnovena-welcome h2 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.karynnovena-welcome p {
+    color: #99867b;
+    font-size: 15px;
+}
+
+.karynnovena-section-title {
+    font-size: 25px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.karynnovena-subtitle {
+    color: #a18e83;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.karynnovena-album-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.karynnovena-album-card {
+    background: white;
+    border: 1px solid #eee1d8;
+    padding: 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #4b403b;
+    transition: 0.2s;
+    min-width: 0;
+}
+
+.karynnovena-album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #eadbd1;
+}
+
+.karynnovena-album-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.karynnovena-album-info {
+    padding: 12px 2px 5px;
+}
+
+.karynnovena-album-info h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.karynnovena-album-info p {
+    color: #977e71;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.karynnovena-album-info span {
+    color: #b7a298;
+    font-size: 12px;
+}
+
+.karynnovena-home-message {
+    margin-top: 65px;
+    background: #f3e7df;
+    padding: 35px;
+    border-radius: 18px;
+}
+
+.karynnovena-home-message h3 {
+    color: #bb7c69;
+    margin-bottom: 10px;
+}
+
+.karynnovena-home-message p {
+    color: #8b776d;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.karynnovena-home-page {
+    display: block;
+}
+
+.karynnovena-album-page {
+    display: none;
+}
+
+.karynnovena-album-page:target {
+    display: block;
+}
+
+body:has(.karynnovena-album-page:target) .karynnovena-home-page {
+    display: none;
+}
+
+.karynnovena-back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #bf7966;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.karynnovena-back-button:hover {
+    text-decoration: underline;
+}
+
+.karynnovena-album-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #f2e7df;
+    padding: 35px;
+    border-radius: 18px;
+}
+
+.karynnovena-album-header img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 5px 8px 15px #ddcfc5;
+}
+
+.karynnovena-small-label {
+    font-size: 12px;
+    color: #bf7966;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.karynnovena-album-header h2 {
+    font-size: 43px;
+    margin-bottom: 12px;
+}
+
+.karynnovena-album-header h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.karynnovena-album-header p {
+    color: #8b776d;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.karynnovena-track-heading {
+    font-size: 25px;
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.karynnovena-song {
+    background: white;
+    border: 1px solid #eee1d8;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.karynnovena-song:hover {
+    background: #fff3ec;
+}
+
+.karynnovena-song-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.karynnovena-song-details span {
+    color: #c39a88;
+    font-size: 15px;
+}
+
+.karynnovena-song-details h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.karynnovena-song-details p {
+    color: #a39188;
+    font-size: 13px;
+}
+
+audio {
+    width: 260px;
+    max-width: 100%;
+    height: 40px;
+}
+
+.karynnovena-bottom-back {
+    display: inline-block;
+    background: #d58e7b;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 25px;
+    margin-top: 35px;
+    font-size: 14px;
+}
+
+.karynnovena-bottom-back:hover {
+    background: #c47966;
+}
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px 20px;
+    color: #a39188;
+    font-size: 12px;
+    line-height: 1.8;
+    border-top: 1px solid #eee1d8;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer p:first-child {
+    color: #c77f6c;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1250px) {
+    .karynnovena-album-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1050px) {
+    .karynnovena-album-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .karynnovena-sidebar {
+        width: 160px;
+        padding: 25px 12px;
+    }
+
+    .karynnovena-sidebar h1 {
+        font-size: 20px;
+    }
+
+    .karynnovena-album-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .karynnovena-album-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .karynnovena-song {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    audio {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .karynnovena-layout {
+        flex-direction: column;
+    }
+
+    .karynnovena-sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 20px;
+    }
+
+    .karynnovena-sidebar h1 {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .karynnovena-menu-label,
+    .karynnovena-sidebar-footer {
+        display: none;
+    }
+
+    .karynnovena-content {
+        padding: 25px 5%;
+    }
+
+    .karynnovena-welcome h2 {
+        font-size: 30px;
+    }
+
+    .karynnovena-album-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .karynnovena-album-card {
+        padding: 10px;
+    }
+
+    .karynnovena-album-info h3 {
+        font-size: 16px;
+    }
+
+    .karynnovena-album-header h2 {
+        font-size: 32px;
+    }
+
+    .karynnovena-album-header img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .karynnovena-home-message {
+        padding: 25px;
+    }
+
+    footer {
+        padding: 25px 10px;
+        font-size: 11px;
+    }
+}
+
+
+
+.karynnovena-music-corner {
+    margin-top: 45px;
+    background: #f8f1eb;
+    border: 1px solid #e4d5c9;
+    border-radius: 16px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 5px 14px rgba(112, 84, 69, 0.08);
+}
+
+.karynnovena-music-corner h3 {
+    color: #c77f6c;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.karynnovena-music-corner p {
+    color: #8b776d;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.karynnovena-music-bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 35px;
+    margin: 14px 0;
+}
+
+.karynnovena-music-bars span {
+    display: block;
+    width: 5px;
+    background: #c77f6c;
+    border-radius: 5px;
+}
+
+.karynnovena-music-bars span:nth-child(1) {
+    height: 12px;
+}
+
+.karynnovena-music-bars span:nth-child(2) {
+    height: 23px;
+}
+
+.karynnovena-music-bars span:nth-child(3) {
+    height: 16px;
+}
+
+.karynnovena-music-bars span:nth-child(4) {
+    height: 30px;
+}
+
+.karynnovena-music-bars span:nth-child(5) {
+    height: 19px;
+}
+
+.karynnovena-music-bars span:nth-child(6) {
+    height: 25px;
+}
+
+.karynnovena-music-bars span:nth-child(7) {
+    height: 12px;
+}
+
+.karynnovena-music-note {
+    font-style: italic;
+}

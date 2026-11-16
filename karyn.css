@@ -1,0 +1,515 @@
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 200 1000;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    color: #354638;
+    min-height: 100vh;
+    font-weight: 400;
+    background-color: #FEFAF3;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(132, 162, 130, 0.06) 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            rgba(132, 162, 130, 0.06) 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(246, 226, 233, 0.09) 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            rgba(246, 226, 233, 0.09) 50%,
+            transparent 50%
+        );
+
+    background-size:
+        110px 110px,
+        110px 110px,
+        55px 55px,
+        55px 55px;
+}
+
+.karyn-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.karyn-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.karyn-photo-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    justify-self: center;
+}
+
+.karyn-photo-link {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #FEFAF3;
+    border: 2px solid #84A282;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.karyn-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.karyn-photo-link:hover {
+    transform: scale(1.02);
+    border-color: #597858;
+}
+
+.karyn-photo-button {
+    position: absolute;
+    bottom: 12px;
+    right: -18px;
+    z-index: 2;
+    background-color: #84A282;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+}
+
+.karyn-photo-button:hover {
+    background-color: #6D8D6B;
+    transform: translateY(-3px);
+}
+
+.karyn-header-box {
+    background-color: #F6E2E9;
+    min-height: 230px;
+    border: 2px solid #D9A9BA;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    box-shadow:
+        0 8px 15px rgba(65, 83, 65, 0.12),
+        0 18px 35px rgba(65, 83, 65, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.karyn-header-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    color: #A47789;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.karyn-header-box h1 {
+    font-size: 35px;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+    color: #594F4E;
+}
+
+.karyn-header-description {
+    font-size: 15px;
+    color: #8A626E;
+    margin-top: 10px;
+}
+
+.karyn-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 45px;
+    align-items: start;
+    margin-bottom: 45px;
+}
+
+.karyn-biodata,
+.karyn-details {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #B8CFB3;
+    border: 2px solid #84A282;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow:
+        0 8px 15px rgba(65, 83, 65, 0.12),
+        0 18px 35px rgba(65, 83, 65, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.karyn-biodata {
+    min-height: 310px;
+}
+
+.karyn-details {
+    min-height: 365px;
+}
+
+.karyn-biodata::before,
+.karyn-details::before {
+    content: "";
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.18);
+    top: -45px;
+    right: -35px;
+    z-index: -1;
+}
+
+.karyn-biodata::after,
+.karyn-details::after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.32);
+    top: 14px;
+    right: -25px;
+    z-index: -1;
+}
+
+.karyn-biodata:hover,
+.karyn-details:hover,
+.karyn-header-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 22px rgba(65, 83, 65, 0.18),
+        0 22px 40px rgba(65, 83, 65, 0.13);
+}
+
+.karyn-card-title {
+    font-size: 23px;
+    font-weight: 700;
+    color: #354638;
+    margin-bottom: 12px;
+}
+
+.karyn-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #84A282;
+    margin-bottom: 24px;
+}
+
+.karyn-biodata p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.karyn-label {
+    font-weight: 700;
+    color: #354638;
+    margin-right: 7px;
+}
+
+.karyn-intro {
+    background-color: #DDE9D9;
+    border: 1px solid #9FB99A;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #527651;
+    font-style: italic;
+}
+
+.karyn-skills h3,
+.karyn-interests h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #354638;
+    margin-bottom: 12px;
+}
+
+.karyn-skills ul {
+    padding-left: 22px;
+    margin-bottom: 24px;
+}
+
+.karyn-skills li {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #405344;
+}
+
+.karyn-interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.karyn-interest-tag {
+    display: inline-block;
+    background-color: #E5EFE2;
+    color: #527651;
+    border: 1px solid #84A282;
+    border-radius: 30px;
+    padding: 7px 13px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.karyn-footer {
+    background-color: #84A282;
+    border: 2px solid #587857;
+    border-radius: 16px;
+    padding: 25px 30px;
+    color: white;
+    min-height: 100px;
+    box-shadow:
+        0 8px 15px rgba(65, 83, 65, 0.12),
+        0 18px 35px rgba(65, 83, 65, 0.10);
+}
+
+.karyn-footer h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.karyn-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.karyn-social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.karyn-social-links a:hover {
+    border-bottom-color: white;
+}
+
+@media (max-width: 700px) {
+
+    .karyn-container {
+        margin: 15px auto;
+        padding: 18px;
+    }
+
+    .karyn-header,
+    .karyn-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .karyn-photo-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .karyn-photo-link {
+        width: 200px;
+        height: 200px;
+    }
+
+    .karyn-photo-button {
+        right: -12px;
+        bottom: 5px;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .karyn-header-box {
+        min-height: 160px;
+    }
+
+    .karyn-header-box h1 {
+        font-size: 30px;
+    }
+
+    .karyn-biodata,
+    .karyn-details {
+        padding: 25px;
+    }
+}
+
+.karyn-main {
+    align-items: start;
+}
+
+.karyn-biodata {
+    min-height: 310px;
+}
+
+.karyn-details {
+    min-height: 480px;
+}
+
+.karyn-interests ul {
+    padding-left: 27px;
+    margin-bottom: 0;
+}
+
+.karyn-interests li {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #405344;
+}
+
+.karyn-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.karyn-bottom-decoration {
+    margin-top: auto;
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #527651;
+    font-size: 22px;
+    justify-content: center;
+}
+
+.karyn-bottom-decoration::before,
+.karyn-bottom-decoration::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #84A282;
+}
+
+
+.karyn-photo-container {
+    position: relative;
+}
+
+.karyn-photo-container::before {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    border: 3px solid #D9A9BA;
+    border-radius: 50%;
+    background-color: #F6E2E9;
+    box-shadow:
+        0 8px 20px rgba(65, 83, 65, 0.16);
+    z-index: -1;
+}
+
+.karyn-photo-link {
+    border: 3px solid #84A282;
+}
+
+.karyn-header-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.karyn-header-box::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    top: -55px;
+    right: -45px;
+}
+
+.karyn-header-box::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid rgba(169, 119, 137, 0.22);
+    bottom: -20px;
+    left: -20px;
+}
+
+
+.karyn-header-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.karyn-header-deco {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    color: #C794A6;
+    opacity: 0.65;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.karyn-header-deco-1 {
+    top: 28px;
+    left: 35px;
+    font-size: 24px;
+}
+
+.karyn-header-deco-2 {
+    top: 35px;
+    right: 45px;
+    font-size: 22px;
+}
+
+.karyn-header-deco-3 {
+    bottom: 30px;
+    right: 50px;
+    font-size: 24px;
+}
+
+.karyn-header-subtitle,
+.karyn-header-box h1,
+.karyn-header-description {
+    position: relative;
+    z-index: 1;
+}
