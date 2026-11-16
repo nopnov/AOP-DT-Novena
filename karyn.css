@@ -513,3 +513,92 @@ body {
     position: relative;
     z-index: 1;
 }
+
+
+/* Education Section */
+
+.karyn-details {
+    min-height: 750px;
+}
+
+.karyn-bottom-decoration {
+    margin-top: 28px;
+    padding-top: 0;
+    margin-bottom: 25px;
+}
+
+.karyn-education h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #354638;
+    margin-bottom: 18px;
+}
+
+.karyn-education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.karyn-education-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #DDE9D9;
+    border: 1px solid #9FB99A;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.karyn-education-level {
+    flex-shrink: 0;
+    width: 48px;
+    text-align: center;
+    padding: 8px 5px;
+    background-color: #E5EFE2;
+    border: 1px solid #84A282;
+    border-radius: 8px;
+    color: #527651;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.karyn-education-school {
+    color: #405344;
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .karyn-details {
+        min-height: 0;
+    }
+
+    .karyn-education-item {
+        padding: 10px;
+    }
+}
+
+
+.karyn-education-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.karyn-education-school {
+    display: block;
+}
+
+.karyn-education-year {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6D8D6B;
+}
+
+.karyn-details {
+    min-height: 790px;
+}
